@@ -8,10 +8,12 @@
     <script src="script.js"></script>
   </head>
   <body onload="backup()">
-    <div class="header">Task Manager Pure Js</div>
+    <div class="header" onclick="localStorRes()">Task Manager Pure Js</div>
     <div class="main">
       <input type="text" name="" id="taskName" placeholder="Nazwa zadania" />
-      <button onclick="newTask()">Dodaj Zadanie</button>
+      <div class="buttonsContainer">
+        <button onclick="newTask()">Dodaj Zadanie</button>
+      </div>
       <div class="task" id="default">
         <h1>Nazwa zadanie</h1>
         <div class="steps">
@@ -21,8 +23,10 @@
             </li>
           </ol>
           <input type="text" name="" id="stepdefault" placeholder="nowy krok" />
-          <button onclick="addStep('default')">Dodaj krok</button>
-          <button onclick="delTask('default')">Usun task</button>
+          <div class="buttonsContainer">
+            <button onclick="addStep('default')">Dodaj krok</button>
+            <button onclick="delTask('default')">Usun task</button>
+          </div>
         </div>
       </div>
     </div>

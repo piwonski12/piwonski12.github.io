@@ -40,8 +40,15 @@ function newTask() {
 
     const input = document.createElement("input");
     input.type = "text";
+    input.placeholder = "nowy krok";
     input.id = "step" + taskName;
     steps.appendChild(input);
+
+    //buttonCenter
+
+    let buttonCenter = document.createElement("div");
+    buttonCenter.className = "buttonsContainer";
+    steps.appendChild(buttonCenter);
 
     //buttonAddtask
 
@@ -50,7 +57,7 @@ function newTask() {
     addButton.addEventListener("click", function () {
       addStep(taskName);
     });
-    steps.appendChild(addButton);
+    buttonCenter.appendChild(addButton);
 
     //del button
 
@@ -59,7 +66,7 @@ function newTask() {
     dellButton.addEventListener("click", function () {
       delTask(taskName);
     });
-    steps.appendChild(dellButton);
+    buttonCenter.appendChild(dellButton);
 
     //dodanie do main diva
     let main = document.querySelector(".main");
@@ -103,7 +110,7 @@ function addStep(taskName) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.body.addEventListener("click", function () {
+  document.querySelector(".main").addEventListener("click", function () {
     let content = document.querySelector(".main").innerHTML;
     localStorage.setItem("main", content);
   });
@@ -135,4 +142,9 @@ function fixTask() {
       };
     }
   });
+}
+
+function localStorRes() {
+  localStorage.clear();
+  window.location.reload();
 }
