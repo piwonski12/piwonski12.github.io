@@ -145,6 +145,6 @@ function fixTask() {
 }
 
 function localStorRes() {
-  localStorage.clear();
+  localStorage.removeItem("main");
   window.location.reload();
 }
